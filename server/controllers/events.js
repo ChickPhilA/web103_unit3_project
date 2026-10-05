@@ -1,7 +1,7 @@
 // This file helps us perform CRUD operations from the 'events' table in our database.
 // To make it make sense: data already exists in our table... so let's read, edit, add, or delete to it.
 
-import { pool } from '../database.js'
+import { pool } from '../config/database.js'
 
 export const getEvents = async (req, res) => {
     try {
