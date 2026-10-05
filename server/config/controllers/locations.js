@@ -2,7 +2,7 @@ import { pool } from '../database.js'
 
 export const getLocations = async (req, res) => {
     try {
-        const results = pool.query(`
+        const results = await pool.query(`
             SELECT * FROM locations ORDER BY id ASC
         `)
 

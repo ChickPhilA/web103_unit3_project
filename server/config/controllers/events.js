@@ -5,7 +5,7 @@ import { pool } from '../database.js'
 
 export const getEvents = async (req, res) => {
     try {
-        const results = pool.query(`
+        const results = await pool.query(`
             SELECT * FROM events ORDER BY id ASC
         `)
 
@@ -37,8 +37,4 @@ export const getEventById = async (req, res) => {
     catch (err){
         res.status(500).json({error: err.message})
     }
-}
-
-export default {
-    getEvents
 }
